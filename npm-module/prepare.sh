@@ -6,6 +6,6 @@ cd $MY_DIR
 rm -rf node_modules/
 rm -rf dist/
 
-npm install
-npm install --only=dev
-npm update the-lodash the-logger the-promise
+npm install --ignore-scripts
+npm install --only=dev --ignore-scripts
+npm update the-lodash the-logger the-promise --ignore-scripts
