@@ -3,8 +3,20 @@ MY_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE
 MY_DIR="$(dirname $MY_PATH)"
 cd $MY_DIR
 
+source configuration.sh
+
 export LOG_TO_FILE=true
 export NODE_ENV=development
 # export DEBUG=express:*
 #  --max_old_space_size=2048
-node src/
+
+
+./build.sh
+RESULT=$?
+if [ $RESULT -ne 0 ]; then
+  echo "Build failed"
+  exit 1;
+fi
+
+
+node .

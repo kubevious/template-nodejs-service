@@ -169,3 +169,7 @@ dist
 .tern-port
 
 .vscode
+
+dist
+
+package-lock.json

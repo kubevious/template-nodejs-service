@@ -3,6 +3,9 @@ MY_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE
 MY_DIR="$(dirname $MY_PATH)"
 cd $MY_DIR
 
-cd src
+rm -rf node_modules/
+rm -rf dist/
+
 npm install
-# npm update kubevious-helpers
+npm install --only=dev
+npm update the-lodash the-logger the-promise @kubevious/helper-backend @kubevious/helper-redis @kubevious/helper-data-store @kubevious/saas-data-models @kubevious/helpers @kubevious/helper-rabbitmq
