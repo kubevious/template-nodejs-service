@@ -11,7 +11,6 @@ if [ -z "${NPM_TOKEN}" ]; then
 fi
 
 docker build \
-    -f Dockerfile \
     -t ${IMAGE_NAME} \
     --build-arg NPM_TOKEN \
     .

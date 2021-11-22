@@ -3,7 +3,6 @@ import { ILogger } from 'the-logger';
 import { Server } from '@kubevious/helper-backend';
 import { Context } from '../context';
 
-export const SERVER_PORT = 8080;
 export interface Helpers
 {
 }
@@ -22,9 +21,9 @@ export class WebServer
 
         this.helpers = {
         };
-        this.server = new Server(this.logger, context, SERVER_PORT, Path.join(__dirname, '..', 'routers'), this.helpers );
-
-        this._loadMiddlewares();
+        this.server = new Server(this.logger, context, this.helpers, {
+            routersDir: Path.join(__dirname, '..', 'routers'),
+        } );
 
         this.server.initializer((app) => {
             app.set('trust proxy', true);
@@ -36,7 +35,4 @@ export class WebServer
         return this.server.run();
     }
 
-    private _loadMiddlewares()
-    {
-    }
 }

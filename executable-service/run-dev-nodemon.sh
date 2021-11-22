@@ -3,4 +3,9 @@ MY_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE
 MY_DIR="$(dirname $MY_PATH)"
 cd $MY_DIR
 
-../saas-dependencies.git/run-dependencies.sh
+export LOG_TO_FILE=true
+export NODE_ENV=development
+
+# export DEBUG=express:*
+npm run build
+nodemon .

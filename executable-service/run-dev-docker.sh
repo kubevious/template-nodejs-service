@@ -5,8 +5,7 @@ cd $MY_DIR
 
 source configuration.sh
 
-echo "*** PREPARE IMAGE WITH:"
-echo "    $ ./prepare-docker.sh"
+./build.sh
 
 docker network create ${NETWORK_NAME}
 
@@ -21,4 +20,6 @@ docker run \
     -e MYSQL_DB=worldvious \
     -e MYSQL_USER=root \
     -e MYSQL_PASS= \
-    ${IMAGE_NAME}
+    -v ${MY_DIR}:/app \
+    --entrypoint="node" \
+    node:14-alpine "/app"
