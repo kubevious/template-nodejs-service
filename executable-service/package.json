@@ -17,7 +17,7 @@
   "author": "Ruben Hakopian <ruben.hakopian@gmail.com>",
   "license": "Propriatery",
   "dependencies": {
-    "@kubevious/helper-backend": "^1.0.36",
+    "@kubevious/helper-backend": "^1.0.37",
     "the-lodash": "^2.0.9",
     "the-logger": "^2.0.14",
     "the-promise": "^2.0.13"
@@ -34,5 +34,11 @@
     "should": "^13.2.3",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
+  },
+  "resolutions": {
+    "the-lodash": "^2.0.9",
+    "the-logger": "^2.0.14",
+    "the-promise": "^2.0.13",
+    "@kubevious/helper-backend": "^1.0.37"
   }
 }
